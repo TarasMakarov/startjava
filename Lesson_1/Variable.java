@@ -1,5 +1,5 @@
 public class Variable {
-		public static void main(String[] args) {
+	public static void main(String[] args) {
 		byte coreSum = 4;
 		short ram = 6;
 		int grafMem = 2;
