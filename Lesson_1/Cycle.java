@@ -9,6 +9,7 @@ public class Cycle {
 			System.out.println(j);
 			j = j - 2;
 		}
+		
 		int number = 10;
 		int sum = 0;
 		do {
