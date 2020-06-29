@@ -14,24 +14,24 @@ public class GuessNumber {
 
 		attempt = 89;
 		if (win < attempt) {
-		System.out.println("Введенное вами число больше того, что загадал компьютер");
+			System.out.println("Введенное вами число больше того, что загадал компьютер");
 		} 
 		if (win > attempt) {
-		System.out.println("Введенное вами число меньше того, что загадал компьютер");
+			System.out.println("Введенное вами число меньше того, что загадал компьютер");
 		}
 		if (win == attempt) {
-		System.out.println("Вы угадали!");
+			System.out.println("Вы угадали!");
 		}
 
 		attempt = 38;
 		if (win < attempt) {
-		System.out.println("Введенное вами число больше того, что загадал компьютер");
+			System.out.println("Введенное вами число больше того, что загадал компьютер");
 		}
 		if (win > attempt) {
-		System.out.println("Введенное вами число меньше того, что загадал компьютер");
+			System.out.println("Введенное вами число меньше того, что загадал компьютер");
 		}
 		if (win == attempt) {
-		System.out.println("Вы угадали!");
+			System.out.println("Вы угадали!");
 		}
 	}
 }
