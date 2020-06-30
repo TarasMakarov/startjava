@@ -7,14 +7,8 @@ public class Calculator {
 		if (operation == '+') {
 			System.out.println("Сумма a и b равна: " + (a + b));
 		}
-		if (operation == '-') {
-			System.out.println("Разность a и b равна: " + (a - b));
-		}
 		
 		operation = '-';
-		if (operation == '+') {
-			System.out.println("Сумма a и b равна: " + (a + b));
-		}
 		if (operation == '-') {
 			System.out.println("Разность a и b равна: " + (a - b));
 		}
@@ -23,37 +17,22 @@ public class Calculator {
 		if (operation == '*') {
 			System.out.println("Произведение a и b равно: " + (a * b));
 		}
-		if (operation == '/') {
-			System.out.println("Частное a и b равно: " + (a / b));
-		}
 
 		operation = '/';
-		if (operation == '*') {
-			System.out.println("Произведение a и b равно: " + (a * b));
-		}
 		if (operation == '/') {
 			System.out.println("Частное a и b равно: " + (a / b));
 		}
 
-		int numToPower = a;
+		int numToPower = 1;
 		operation = '^';
 		if (operation == '^') {
-			for (int i = 1; i < b; i++) {
+			for (int i = 0; i < b; i++) {
 				numToPower *= a;
 			}
 			System.out.println("Результат возведения числа a в степень b равен: " + (numToPower));
 		}
-		if (operation == '%') {
-			System.out.println("Результат деления по модулю числа a на число b равен: " + (a % b));
-		}
 
 		operation = '%';
-		if (operation == '^') {
-			for (int i = 0; i < b; i++) {
-				numToPower = numToPower * a;
-			}
-			System.out.println("Результат возведения числа a в степень b равен: " + (numToPower));
-		}
 		if (operation == '%') {
 			System.out.println("Результат деления по модулю числа a на число b равен: " + (a % b));
 		}
