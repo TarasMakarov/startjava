@@ -1,7 +1,7 @@
 public class Calculator {
 	public static void main(String[] args) {
 		int a = 8;
-		int b = 4;
+		int b = 0;
 		char operation = '+';
 
 		if (operation == '+') {
@@ -19,8 +19,11 @@ public class Calculator {
 		}
 
 		operation = '/';
-		if (operation == '/') {
+		if (b != 0 && operation == '/') {
 			System.out.println("Частное a и b равно: " + (a / b));
+		}
+		if (b == 0) {
+			System.out.println("На ноль делить нельзя!");
 		}
 
 		int numToPower = 1;
@@ -33,8 +36,11 @@ public class Calculator {
 		}
 
 		operation = '%';
-		if (operation == '%') {
+		if (b != 0 && operation == '%') {
 			System.out.println("Результат деления по модулю числа a на число b равен: " + (a % b));
+		}
+		if (b == 0) {
+			System.out.println("На ноль делить нельзя!");
 		}
 	} 
 }
