@@ -34,6 +34,7 @@ public class Calculator {
 		if (b != 0 && operation == '%') {
 			System.out.println("Результат деления по модулю числа a на число b равен: " + (a % b));
 		}
+		
 		if (operation == '%' && b == 0) {
 			System.out.println("На ноль делить нельзя!");
 		}
