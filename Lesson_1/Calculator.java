@@ -2,7 +2,6 @@ public class Calculator {
 		public static void main(String[] args) {
 				int a = 8;
 				int b = 0;
-		
 				char operation = '%';
 
 				if (operation == '+') {
