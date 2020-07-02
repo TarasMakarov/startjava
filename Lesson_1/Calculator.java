@@ -13,8 +13,8 @@ public class Calculator {
 		} else if (operation == '/') {
 			if (b != 0) {
 				System.out.println("Частное a и b равно: " + (a / b));
-				} else {
-			System.out.println("На ноль делить нельзя!");
+			} else {
+				System.out.println("На ноль делить нельзя!");
 			}
 		} else if (operation == '^') {
 			int numToPower = 1;
@@ -26,7 +26,7 @@ public class Calculator {
 			if (b != 0) {
 				System.out.println("Результат деления по модулю числа a на число b равен: " + (a % b));
 			} else {
-			System.out.println("На ноль делить нельзя!");
+				System.out.println("На ноль делить нельзя!");
 			}
 		}
 	} 
