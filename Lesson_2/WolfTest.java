@@ -8,11 +8,11 @@ public class WolfTest {
 		bigFang.age = 12;
 		bigFang.color = "Grey";
 
-		System.out.println(bigFang.nickname);
-		System.out.println(bigFang.sex);
-		System.out.println(bigFang.age);
-		System.out.println(bigFang.weight);
-		System.out.println(bigFang.color);
+		System.out.println("nickname " + bigFang.nickname);
+		System.out.println("sex " + bigFang.sex);
+		System.out.println("age " + bigFang.age);
+		System.out.println("weight " + bigFang.weight);
+		System.out.println("color " + bigFang.color);
 
 		bigFang.go();
 		System.out.println(bigFang.sit());
