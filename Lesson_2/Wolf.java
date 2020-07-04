@@ -1,29 +1,74 @@
-/*Создайте класс Wolf
-напишите в нем поля: пол, кличка, вес, возраст, окрас
-напишите в нем методы: идти, сидеть, бежать, выть, охотиться
-Создайте класс WolfTest с методом main
-создайте объект типа Wolf
-присвойте в нем полям экземпляра класса Wolf какие-то значения
-считайте эти значения из полей и отобразите в консоли
-вызовите методы объекта*/
+/*Модифицируйте класс Wolf
+у всех полей класса напишите модификатор доступа private
+у всех методов класса напишите модификатор доступа public
+для доступа к полям создайте геттеры и сеттеры
+в сеттере поля age реализуйте проверку: если возраст волка > 8 лет, то выведите сообщение "Некорректный возраст"
+Модифицируйте класс WolfTest
+с помощью сеттеров присвойте полям экземпляра класса Wolf какие-то значения
+считайте эти значения из полей с помощью геттеров и отобразите в консоли*/
 
 public class Wolf {
 	
-	String sex;
-	String nickname;
-	int weight;
-	int age;
-	String color;
+	private String sex;
+	private String nickname;
+	private int weight;
+	private int age;
+	private String color;
 
-	void go() {
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		if (age > 8) {
+			this.age = age;
+			System.out.println("Некорректный возраст.");
+		} else {
+			this.age = age;
+		}
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public void go() {
 		System.out.println("It's my terrain.");
 	}
 
-	String sit() {
+	public String sit() {
 		return "I sit high, I look far";
 	}
 
-	void run() {
+	public void run() {
 		if (weight > 70) {
 			System.out.println("Eat less((");
 		} else if (weight > 40) {
@@ -33,7 +78,7 @@ public class Wolf {
 		}
 	}
 
-	void howl() {
+	public void howl() {
 		char c = 85;
 		for(int i = 0; i < age; i++) {
 			System.out.print(c);
@@ -41,7 +86,7 @@ public class Wolf {
 		System.out.println();
 	}
 
-	void hunt() {
+	public void hunt() {
 		if (sex == "female") {
 			System.out.println("I'm not a hunter. I'm a housewife.");
 		} else {
