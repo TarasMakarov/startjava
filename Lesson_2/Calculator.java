@@ -38,7 +38,7 @@ public class Calculator {
 		this.mathOperation = mathOperation;
 	}
 
-	public void answer() {
+	public void answerCalculator() {
 		switch (mathOperation) {
 			case '+':
 				System.out.println("Сумма чисел равна: " + (firstNumber + secondNumber));

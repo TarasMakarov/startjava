@@ -13,6 +13,15 @@ import java.util.Scanner;
 public class CalculatorTest {
 
 	public static void main(String[] args) {
+
+		CalculatorSolution calculatorSolution = new CalculatorSolution();
+		calculatorSolution.solutionCalculator();
+	}
+}
+
+class CalculatorSolution {
+
+	public void solutionCalculator() {
 		Calculator calculator = new Calculator();
 		System.out.print("Введите первое число: ");
 		Scanner scanNumberOne = new Scanner(System.in);
@@ -24,6 +33,23 @@ public class CalculatorTest {
 		Scanner scanNumberTwo = new Scanner(System.in);
 		calculator.setSecondNumber(scanNumberTwo.nextInt());
 
-		calculator.answer();
+		calculator.answerCalculator();
+		questionForUser();
+	}
+
+	public void questionForUser() {
+		System.out.print("Хотите продолжить? [да/нет]: ");
+		Scanner yesOrNo = new Scanner(System.in);
+		String answerUser = yesOrNo.nextLine();
+
+		switch (answerUser) {
+			case "нет":
+				break;
+			case "да":
+				solutionCalculator();
+				break;
+			default:
+				questionForUser();
+		}
 	}
 }
