@@ -34,19 +34,17 @@ class CalculatorSolution {
 		calculator.setSecondNumber(scanNumberTwo.nextInt());
 
 		calculator.answerCalculator();
+
 		questionForUser();
 	}
 
 	public void questionForUser() {
 		System.out.print("Хотите продолжить? [да/нет]: ");
 		Scanner yesOrNo = new Scanner(System.in);
-		String answerUser = yesOrNo.nextLine();
-
-		switch (answerUser) {
-			case "нет":
-				break;
+		switch (yesOrNo.nextLine()) {
 			case "да":
 				solutionCalculator();
+			case "нет":
 				break;
 			default:
 				questionForUser();
