@@ -22,12 +22,12 @@ public class CalculatorTest {
 	}
 
 	public static void askUser() {
-		System.out.print("Хотите продолжить? [да/нет]: ");
 		Scanner input = new Scanner(System.in);
+		System.out.print("Хотите продолжить? [yes/no]: ");
 		switch (input.nextLine()) {
-			case "да":
+			case "yes":
 				solveExample();
-			case "нет":
+			case "no":
 				break;
 			default:
 				askUser();
