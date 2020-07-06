@@ -1,53 +1,45 @@
-/*Модифицируйте программу Калькулятор:
-реализуйте дополнительный класс CalculatorTest, перенеся в него метод main
-класс Calculator будет отвечать за проверку знака и мат. вычисления
-для проверки знака математической операции воспользуйтесь оператором switch
-для ввода мат. выражения используйте клавиатуру (класс Scanner)
-формат ввода математического выражения:
-Введите первое число: 2
-Введите знак математической операции: ^
-Введите второе число: 10*/
-
 import java.util.Scanner;
 
 public class CalculatorTest {
 
 	public static void main(String[] args) {
-
-		CalculatorSolution calculatorSolution = new CalculatorSolution();
-		calculatorSolution.solutionCalculator();
-	}
-}
-
-class CalculatorSolution {
-
-	public void solutionCalculator() {
-		Calculator calculator = new Calculator();
-		System.out.print("Введите первое число: ");
-		Scanner scanNumberOne = new Scanner(System.in);
-		calculator.setFirstNumber(scanNumberOne.nextInt());
-		System.out.print("Введите знак математической операции: ");
-		Scanner scanMatnOperation = new Scanner(System.in);
-		calculator.setMathOperation(scanMatnOperation.next().charAt(0));
-		System.out.print("Введите второе число: ");
-		Scanner scanNumberTwo = new Scanner(System.in);
-		calculator.setSecondNumber(scanNumberTwo.nextInt());
-
-		calculator.answerCalculator();
-
-		questionForUser();
+		solveExample();
 	}
 
-	public void questionForUser() {
+	public static void solveExample() {
+	Calculator calculator = new Calculator();
+	Scanner input = new Scanner(System.in);
+	System.out.print("Введите первое число: ");
+	calculator.setFirstNumber(input.nextInt());
+	System.out.print("Введите знак математической операции: ");
+	calculator.setMathOperation(input.next().charAt(0));
+	System.out.print("Введите второе число: ");
+	calculator.setSecondNumber(input.nextInt());
+
+	calculator.calculate();
+
+	askUser();
+	}
+
+	public static void askUser() {
 		System.out.print("Хотите продолжить? [да/нет]: ");
-		Scanner yesOrNo = new Scanner(System.in);
-		switch (yesOrNo.nextLine()) {
+		Scanner input = new Scanner(System.in);
+		switch (input.nextLine()) {
 			case "да":
-				solutionCalculator();
+				solveExample();
 			case "нет":
 				break;
 			default:
-				questionForUser();
+				askUser();
 		}
 	}
 }
+
+
+
+/*CalculatorTest
+а зачем тебе еще один класс CalculatorSolution? Какую задачу он решает? Делай все в CalculatorTest
+
+достаточно создать один экземпляр класса Scanner на весь класс
+*/
+
