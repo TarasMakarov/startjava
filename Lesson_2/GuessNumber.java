@@ -13,17 +13,13 @@ public class GuessNumber {
 		this.compNumber = compNumber;
 	}
 
-	public void beginGame() {
+	public void guessGame() {
 		System.out.println("Уважаемые игроки, представьтесь, пожалуйста.");
 		System.out.println("Игрок под номером 1");
 		System.out.println("Меня зовут " + player1.getName());
 		System.out.println("Игрок под номером 2");
 		System.out.println("Меня зовут " + player2.getName());
 		System.out.println("Сегодня с нами играют: " + player1.getName() + " и " + player2.getName() + " !!!");
-	}
-
-
-	public void guessGame() {
 		do {
 			int c = (int) (Math.random() * 100);
 			setCompNumber(c);
