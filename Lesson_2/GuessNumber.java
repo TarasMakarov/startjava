@@ -9,7 +9,7 @@ public class GuessNumber {
 	private int compNumber;
 	private String answer = "";
 
-	public void setCompNumber(int compNumber) {
+	private void setCompNumber(int compNumber) {
 		this.compNumber = compNumber;
 	}
 
