@@ -13,7 +13,7 @@ public class Player {
 	public String getName() {
 		return name;
 	}
-	
+
 	public int getNumber() {
 		return number;
 	}
