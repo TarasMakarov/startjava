@@ -13,38 +13,41 @@ public class GuessNumber {
 		this.player2 = player2;
 	}
 
-	private void setCompNumber(int compNumber) {
-		this.compNumber = compNumber;
-	}
-
 	public void guessGame() {
+			System.out.println("Игрок под номером 1");
+			System.out.println("Меня зовут " + player1.getName());
+			System.out.println("Игрок под номером 2");
+			System.out.println("Меня зовут " + player2.getName());
+			System.out.println("Сегодня с нами играют: " + player1.getName() + " и " + player2.getName() + " !!!");
 			System.out.println("Игра начинается!");
-			int c = (int) (Math.random() * 100);
-			setCompNumber(c);
+			compNumber = (int) (Math.random() * 101);
 			System.out.println("Компьютер загадал свое число. И это число: " + compNumber);
 			do {
 				System.out.println(player1.getName() + ", как Вы думаете, какое число загадал компьютер?");
 				player1.setNumber(input.nextInt());
-				player1.guessNumber();
-				giveHint(player1.getNumber());
+				System.out.println("Я думаю, это число: " + player1.getNumber());
+				compareNums(player1.getNumber());
 					if (compNumber != player1.getNumber()) {
 						System.out.println(player2.getName() + ", как Вы думаете, какое число загадал компьютер?");
 						player2.setNumber(input.nextInt());
-						player2.guessNumber();
-						giveHint(player2.getNumber());
+						System.out.println("Я думаю, это число: " + player2.getNumber());
+						compareNums(player2.getNumber());
 					} else {
 						System.out.print("");
 					}
 			} while (compNumber != player1.getNumber() && compNumber != player2.getNumber());
 	}
 
-	private void giveHint(int playerNumber) {
+	private void compareNums(int playerNumber) {
 		if (compNumber < playerNumber) {
 			System.out.println("Введенное вами число больше того, что загадал компьютер");
 		} else if (compNumber > playerNumber) {
 			System.out.println("Введенное вами число меньше того, что загадал компьютер");
+		} else if (compNumber == player1.getNumber()) {
+			System.out.println(player1.getName() + ", Вы угадали!");
+			System.out.println("Игра окончена!");
 		} else {
-			System.out.println("Вы угадали!");
+			System.out.println(player2.getName() + ", Вы угадали!");
 			System.out.println("Игра окончена!");
 		}
 	}

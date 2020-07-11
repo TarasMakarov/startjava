@@ -10,16 +10,10 @@ public class GuessNumberTest {
 		Player player1 = new Player(input.nextLine());
 		Player player2 = new Player(input.nextLine());
 
-		System.out.println("Игрок под номером 1");
-		System.out.println("Меня зовут " + player1.getName());
-		System.out.println("Игрок под номером 2");
-		System.out.println("Меня зовут " + player2.getName());
-		System.out.println("Сегодня с нами играют: " + player1.getName() + " и " + player2.getName() + " !!!");
-
-		GuessNumber players = new GuessNumber(player1, player2);
+		GuessNumber game = new GuessNumber(player1, player2);
 
 		do {
-			players.guessGame();
+			game.guessGame();
 			do {
 				System.out.print("Хотите продолжить? [да/нет]: ");
 				answer = input.next();
