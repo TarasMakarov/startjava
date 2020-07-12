@@ -12,6 +12,8 @@ public class GuessNumberTest {
 
 		GuessNumber game = new GuessNumber(player1, player2);
 
+		game.sayHello();
+
 		do {
 			game.guessGame();
 			do {
