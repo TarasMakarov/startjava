@@ -24,7 +24,7 @@ public class GuessNumber {
 			compNumber = (int) (Math.random() * 101);
 			System.out.println("Компьютер загадал свое число. И это число: " + compNumber);
 			numberWin = true;
-			while(playerNumber) {
+			while(numberWin) {
 				System.out.println(player1.getName() + ", как Вы думаете, какое число загадал компьютер?");
 				player1.setNumber(input.nextInt());
 				System.out.println("Я думаю, это число: " + player1.getNumber());
