@@ -32,7 +32,7 @@ public class GuessNumber {
 			player1.setNumber(input.nextInt());
 			System.out.println("Я думаю, это число: " + player1.getNumber());
 			compareNums(player1);
-				if (compNumber != player1.getNumber()) {
+				if (numberWin) {
 					System.out.println(player2.getName() + ", как Вы думаете, какое число загадал компьютер?");
 					player2.setNumber(input.nextInt());
 					System.out.println("Я думаю, это число: " + player2.getNumber());
