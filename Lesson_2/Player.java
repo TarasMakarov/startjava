@@ -6,10 +6,6 @@ public class Player {
 		this.name = name;
 	}
 
-	public void guessNumber() {
-		System.out.println("Я думаю, это число: " + number);
-	}
-
 	public String getName() {
 		return name;
 	}
