@@ -5,7 +5,6 @@ public class GuessNumber {
 	private int compNumber;
 	Scanner input = new Scanner(System.in);
 	boolean numberWin;
-	private int countPlayers = 1;
 	private int count = 1;
 
 	private Player player1;
@@ -17,7 +16,7 @@ public class GuessNumber {
 	}
 
 	public void guessGame() {
-		if (countPlayers == count) {
+		if (count == 1) {
 			sayHello(player1);
 			sayHello(player2);
 			System.out.println("Сегодня с нами играют: " + player1.getName() + " и " + player2.getName() + " !!!");
@@ -27,7 +26,6 @@ public class GuessNumber {
 				System.out.println("Игра начинается!");
 				compNumber = (int) (Math.random() * 101);
 				System.out.println("Компьютер загадал свое число. И это число: " + compNumber);
-				numberWin = true;
 				while(numberWin) {
 					System.out.println(player1.getName() + ", как Вы думаете, какое число загадал компьютер?");
 					player1.setNumber(input.nextInt());
