@@ -4,7 +4,6 @@ public class GuessNumber {
 
 	private int compNumber;
 	Scanner input = new Scanner(System.in);
-	private int count = 1;
 
 	private Player player1;
 	private Player player2;
@@ -15,10 +14,7 @@ public class GuessNumber {
 	}
 
 	public void guessGame() {
-		if (count == 1) {
-			sayHello(player1);
-			sayHello(player2);
-			System.out.println("Сегодня с нами играют: " + player1.getName() + " и " + player2.getName() + " !!!");
+		while (sayHello()) {
 		}
 		System.out.println("Игра начинается!");
 		compNumber = (int) (Math.random() * 101);
@@ -36,10 +32,13 @@ public class GuessNumber {
 		} while (compNumber != player1.getNumber() && compNumber != player2.getNumber());
 	}
 
-	private void sayHello(Player player) {
-		System.out.println("Игрок под номером " + count);
-		System.out.println("Меня зовут " + player.getName());
-		count++;
+	private boolean sayHello() {
+		System.out.println("Игрок под номером 1");
+		System.out.println("Меня зовут " + player1.getName());
+		System.out.println("Игрок под номером 2");
+		System.out.println("Меня зовут " + player2.getName());
+		System.out.println("Сегодня с нами играют: " + player1.getName() + " и " + player2.getName() + " !!!");
+		return false;
 	}
 
 	private boolean compareNums(Player player) {
