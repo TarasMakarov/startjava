@@ -4,7 +4,6 @@ public class GuessNumber {
 
 	private int compNumber;
 	Scanner input = new Scanner(System.in);
-	boolean numberWin;
 	private int count = 1;
 
 	private Player player1;
@@ -21,24 +20,20 @@ public class GuessNumber {
 			sayHello(player2);
 			System.out.println("Сегодня с нами играют: " + player1.getName() + " и " + player2.getName() + " !!!");
 		}
-			numberWin =true;
-			while (numberWin) {
-				System.out.println("Игра начинается!");
-				compNumber = (int) (Math.random() * 101);
-				System.out.println("Компьютер загадал свое число. И это число: " + compNumber);
-				while(numberWin) {
-					System.out.println(player1.getName() + ", как Вы думаете, какое число загадал компьютер?");
-					player1.setNumber(input.nextInt());
-					System.out.println("Я думаю, это число: " + player1.getNumber());
-					compareNums(player1);
-						if (numberWin) {
-							System.out.println(player2.getName() + ", как Вы думаете, какое число загадал компьютер?");
-							player2.setNumber(input.nextInt());
-							System.out.println("Я думаю, это число: " + player2.getNumber());
-							compareNums(player2);
-						}
+		System.out.println("Игра начинается!");
+		compNumber = (int) (Math.random() * 101);
+		System.out.println("Компьютер загадал свое число. И это число: " + compNumber);
+		do {
+			System.out.println(player1.getName() + ", как Вы думаете, какое число загадал компьютер?");
+			player1.setNumber(input.nextInt());
+			System.out.println("Я думаю, это число: " + player1.getNumber());
+				if (compareNums(player1)) {
+					System.out.println(player2.getName() + ", как Вы думаете, какое число загадал компьютер?");
+					player2.setNumber(input.nextInt());
+					System.out.println("Я думаю, это число: " + player2.getNumber());
+					compareNums(player2);
 				}
-			}
+		} while (compNumber != player1.getNumber() && compNumber != player2.getNumber());
 	}
 
 	private void sayHello(Player player) {
@@ -47,18 +42,17 @@ public class GuessNumber {
 		count++;
 	}
 
-	private void compareNums(Player player) {
+	private boolean compareNums(Player player) {
 		if (compNumber < player.getNumber()) {
 			System.out.println("Введенное вами число больше того, что загадал компьютер");
-			//return true;
+			return true;
 		} else if (compNumber > player.getNumber()) {
 			System.out.println("Введенное вами число меньше того, что загадал компьютер");
-			//return true;
+			return true;
 		} else {
 			System.out.println(player.getName() + ", Вы угадали!");
 			System.out.println("Игра окончена!");
-			numberWin = false;
-			//return false;
+			return false;
 		}
 	}
 }
