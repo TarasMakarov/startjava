@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class GuessNumber {
 
 	private int compNumber;
+	private int countSayHello;
 	Scanner input = new Scanner(System.in);
 
 	private Player player1;
@@ -14,7 +15,8 @@ public class GuessNumber {
 	}
 
 	public void guessGame() {
-		while (sayHello()) {
+		while (countSayHello == 0) {
+			sayHello();
 		}
 		System.out.println("Игра начинается!");
 		compNumber = (int) (Math.random() * 101);
@@ -32,13 +34,13 @@ public class GuessNumber {
 		} while (compNumber != player1.getNumber() && compNumber != player2.getNumber());
 	}
 
-	private boolean sayHello() {
+	private void sayHello() {
 		System.out.println("Игрок под номером 1");
 		System.out.println("Меня зовут " + player1.getName());
 		System.out.println("Игрок под номером 2");
 		System.out.println("Меня зовут " + player2.getName());
 		System.out.println("Сегодня с нами играют: " + player1.getName() + " и " + player2.getName() + " !!!");
-		return false;
+		countSayHello++;
 	}
 
 	private boolean compareNums(Player player) {
