@@ -49,9 +49,8 @@ public class GuessNumber {
 			System.out.println("Игра окончена!");
 			return true;
 		} else {
-			String answerCompareNum = compNumber < player.getNumber()? "Введенное вами число больше того, что загадал компьютер" : 
-			"Введенное вами число меньше того, что загадал компьютер";
-			System.out.println(answerCompareNum);
+			String answerCompareNum = compNumber < player.getNumber()? " больше " : " меньше ";
+			System.out.println("Введенное вами число" + answerCompareNum + "того, что загадал компьютер");
 			return false;
 		}
 	}
