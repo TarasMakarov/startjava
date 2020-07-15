@@ -52,6 +52,7 @@ public class GuessNumber {
 			String answerCompareNum = compNumber < player.getNumber()? "Введенное вами число больше того, что загадал компьютер" : 
 			"Введенное вами число меньше того, что загадал компьютер";
 			System.out.println(answerCompareNum);
-		} return false;
+			return false;
+		}
 	}
 }
