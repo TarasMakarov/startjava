@@ -8,7 +8,6 @@ public class CalculatorTest {
         Calculator calculator = new Calculator();
         Scanner input = new Scanner(System.in);
         int[] numbers = new int[2];
-
         String answer = null;
 
         do {
@@ -19,7 +18,6 @@ public class CalculatorTest {
             calculator.setSecondNumber(Integer.parseInt(membersExample[2]));
             calculator.setMathOperation(membersExample[1].charAt(0));
 
-
             calculator.calculate();
 
             do {
@@ -29,4 +27,3 @@ public class CalculatorTest {
         } while (answer.equals("да"));
     }
 }
-
