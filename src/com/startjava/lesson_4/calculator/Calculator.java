@@ -37,11 +37,7 @@ public class Calculator {
                 }
                 break;
             case '^':
-                if (secondNumber == 0) {
-                    System.out.println("Результат возведения первого числа в степень равную второму числу: 1");
-                } else {
-                    System.out.println("Результат возведения первого числа в степень равную второму числу: " + Math.pow(firstNumber, secondNumber));
-                }
+                System.out.println("Результат возведения первого числа в степень равную второму числу: " + Math.pow(firstNumber, secondNumber));
                 break;
             case '%':
                 if (secondNumber == 0) {
