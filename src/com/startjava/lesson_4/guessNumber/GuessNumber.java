@@ -61,7 +61,7 @@ public class GuessNumber {
     private boolean compareNums(Player player) {
         if (compNumber == player.getNumber()) {
             System.out.println(player.getName() + ", Вы угадали!");
-            System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + counter + " попытки.");
+            System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + (Arrays.binarySearch(player.getNumbs(), player.getNumber()) + 1) + " попытки.");
             counter = 0;
             Arrays.fill(player1.getNumbs(), 0);
             Arrays.fill(player2.getNumbs(), 0);
