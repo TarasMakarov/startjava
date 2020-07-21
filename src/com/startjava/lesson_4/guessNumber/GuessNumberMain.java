@@ -12,7 +12,6 @@
 
 package com.startjava.lesson_4.guessNumber;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class GuessNumberMain {
