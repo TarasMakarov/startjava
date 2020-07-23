@@ -10,38 +10,32 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
 
-    private int counter;
-    private boolean winPlayer2;
-
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
 
     public void guessGame() {
-        counter = 0;
+        player1.setAttempt(0);
+        player2.setAttempt(0);
         sayHello();
         guessCompNumber();
         do {
-            if (counter > 9) {
+            if (player1.getAttempt() > 9) {
                 break;
             }
             inputNumber(player1);
-            if (!compareNums(player1)) {
-                counter--;
+            if (!compareNumbers(player1)) {
                 inputNumber(player2);
-                if (compareNums(player2)) {
-                    winPlayer2 = true;
+                if (compareNumbers(player2)) {
                     break;
                 }
             } else {
                 break;
             }
         } while (true);
-        gameOver(player1);
-        System.out.println();
-        gameOver(player2);
-        System.out.println();
+        showNumbers(player1);
+        showNumbers(player2);
         Arrays.fill(player1.getNumbers(), 0);
         Arrays.fill(player2.getNumbers(), 0);
     }
@@ -62,34 +56,32 @@ public class GuessNumber {
 
     private void inputNumber(Player player) {
         System.out.println(player.getName() + ", как Вы думаете, какое число загадал компьютер?");
-        player.getNumbers()[counter] = input.nextInt();
-        System.out.println("Я думаю, это число: " + player.getNumbers()[counter]);
-        counter++;
+        player.getNumbers()[player.getAttempt()] = input.nextInt();
+        System.out.println("Я думаю, это число: " + player.getNumbers()[player.getAttempt()]);
+        player.setAttempt(player.getAttempt() + 1);
     }
 
-    private boolean compareNums(Player player) {
-        if (compNumber == player.getNumbers()[counter - 1]) {
+    private boolean compareNumbers(Player player) {
+        if (compNumber == player.getNumbers()[player.getAttempt() - 1]) {
             System.out.println(player.getName() + ", Вы угадали!");
-            System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + counter + " попытки.");
+            System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + player.getAttempt() + " попытки.");
             return true;
         } else {
-            String answerCompareNum = compNumber < player.getNumbers()[counter - 1] ? " больше " : " меньше ";
+            String answerCompareNum = compNumber < player.getNumbers()[player.getAttempt() - 1] ? " больше " : " меньше ";
             System.out.println("Введенное вами число" + answerCompareNum + "того, что загадал компьютер");
             return false;
         }
     }
 
-    private void gameOver(Player player) {
-        if (counter > 9) {
+    private void showNumbers(Player player) {
+        if (player.getAttempt() > 9) {
             System.out.println("У " + player.getName() + " закончились попытки.");
         }
         System.out.print("Игрок " + player.getName() + " называл числа: ");
-        int[] copyNumbers = Arrays.copyOf(player.getNumbers(), counter);
+        int[] copyNumbers = Arrays.copyOf(player.getNumbers(), player.getAttempt());
         for (int i = 0; i < copyNumbers.length; i++) {
             System.out.print(copyNumbers[i] + " ");
         }
-        if (!winPlayer2) {
-            counter--;
-        }
+        System.out.print("\n");
     }
 }
