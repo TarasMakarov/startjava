@@ -21,23 +21,24 @@ public class GuessNumber {
         sayHello();
         guessCompNumber();
         do {
-            if (player1.getAttempt() > 9) {
+            inputNumber(player1);
+            if (compareNumbers(player1)) {
                 break;
             }
-            inputNumber(player1);
-            if (!compareNumbers(player1)) {
-                inputNumber(player2);
-                if (compareNumbers(player2)) {
-                    break;
-                }
-            } else {
+            inputNumber(player2);
+            if (compareNumbers(player2)) {
+                break;
+            }
+            if (player1.getAttempt() > 9) {
+                completeGame(player1);
+                completeGame(player2);
                 break;
             }
         } while (true);
         showNumbers(player1);
         showNumbers(player2);
-        Arrays.fill(player1.getNumbers(), 0);
-        Arrays.fill(player2.getNumbers(), 0);
+        Arrays.fill(player1.getNumbers(), 0, player1.getAttempt(), 0);
+        Arrays.fill(player2.getNumbers(), 0, player2.getAttempt(), 0);
     }
 
     private void sayHello() {
@@ -73,15 +74,16 @@ public class GuessNumber {
         }
     }
 
+    private void completeGame(Player player) {
+        System.out.println("У " + player.getName() + " закончились попытки.");
+    }
+
     private void showNumbers(Player player) {
-        if (player.getAttempt() > 9) {
-            System.out.println("У " + player.getName() + " закончились попытки.");
-        }
         System.out.print("Игрок " + player.getName() + " называл числа: ");
         int[] copyNumbers = Arrays.copyOf(player.getNumbers(), player.getAttempt());
         for (int i = 0; i < copyNumbers.length; i++) {
             System.out.print(copyNumbers[i] + " ");
         }
-        System.out.print("\n");
+        System.out.println();
     }
 }
