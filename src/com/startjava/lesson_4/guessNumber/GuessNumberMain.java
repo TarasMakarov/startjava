@@ -17,7 +17,7 @@ public class GuessNumberMain {
         do {
             game.guessGame();
             do {
-                System.out.print("Хотите продолжить? [да/нет]: ");
+                System.out.print("\n" + "Хотите продолжить? [да/нет]: ");
                 answer = input.next();
             } while (!answer.equals("да") && !answer.equals("нет"));
         } while (answer.equals("да"));

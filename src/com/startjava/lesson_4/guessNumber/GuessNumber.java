@@ -30,8 +30,7 @@ public class GuessNumber {
                 break;
             }
             if (player1.getAttempt() > 9) {
-                completeGame(player1);
-                completeGame(player2);
+                System.out.print("У игроков закончились попытки.");
                 break;
             }
         } while (true);
@@ -65,7 +64,7 @@ public class GuessNumber {
     private boolean compareNumbers(Player player) {
         if (compNumber == player.getNumbers()[player.getAttempt() - 1]) {
             System.out.println(player.getName() + ", Вы угадали!");
-            System.out.println("Игрок " + player.getName() + " угадал число " + compNumber + " с " + player.getAttempt() + " попытки.");
+            System.out.print("Игрок " + player.getName() + " угадал число " + compNumber + " с " + player.getAttempt() + " попытки.");
             return true;
         } else {
             String answerCompareNum = compNumber < player.getNumbers()[player.getAttempt() - 1] ? " больше " : " меньше ";
@@ -74,16 +73,11 @@ public class GuessNumber {
         }
     }
 
-    private void completeGame(Player player) {
-        System.out.println("У " + player.getName() + " закончились попытки.");
-    }
-
     private void showNumbers(Player player) {
-        System.out.print("Игрок " + player.getName() + " называл числа: ");
+        System.out.print("\n" + "Игрок " + player.getName() + " называл числа: ");
         int[] copyNumbers = Arrays.copyOf(player.getNumbers(), player.getAttempt());
         for (int i = 0; i < copyNumbers.length; i++) {
             System.out.print(copyNumbers[i] + " ");
         }
-        System.out.println();
     }
 }
